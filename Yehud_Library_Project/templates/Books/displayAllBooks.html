@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{%extends 'layout.html'%}
+{%block header%}{{super()}}{%endblock%}
+{%block content%}
+<body background="/static/image/BG.jpg">
+<h1 class="text-center">You can view all Books from here</h1>
+
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Year Published</th>
+            <th>Type</th>
+        </tr>
+        {% for book in Books %}
+        <tr>
+            <td>{{book[0]}}</td>
+            <td>{{book[1]}}</td>
+            <td>{{book[2]}}</td>
+            <td>{{book[3]}}</td>
+            <td>{{book[4]}}</td>
+        </tr>
+        {% endfor %}   
+    </table>
+</div>
+</body>
+{%endblock%}
+{%block footer%}{{super()}}{%endblock%}
